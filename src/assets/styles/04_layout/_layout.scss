@@ -1,0 +1,31 @@
+html {
+  font-family: 16px;
+}
+
+body {
+  background-color: $background-color;
+  min-height: 100vh;
+  width: 100vw;
+}
+.body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1.5fr;
+  grid-template-rows: 29vh 29vh 1fr;
+  grid-template-areas:
+    'image content'
+    'image mode'
+    'info info';
+  padding: 4em 12em 0;
+}
+
+.planet-wiki {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 110px 3fr;
+  grid-template-areas:
+    'header'
+    'body';
+}

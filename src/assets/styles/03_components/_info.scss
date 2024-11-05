@@ -1,0 +1,45 @@
+.info {
+  grid-area: info;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2em;
+    border-radius: 2px;
+    padding: 1.5rem;
+    border: 1px solid $grey;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      scale: 1.05;
+    }
+
+    &-title {
+      font-size: 1.2em;
+      color: $grey;
+      font-weight: 400;
+      font-family: $font-title;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    &-content {
+      font-size: 2.5em;
+      color: $white;
+      font-weight: 400;
+      font-family: $font-title;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@mixin setColor($color, $index) {
+  &:nth-child(#{$index}) {
+    color: $color;
+
+    &::before {
+      background-color: $color;
+      transform: scale(1);
+      border-radius: 50%;
+    }
+    &::after {
+      background-color: $color;
+      width: 100%;
+    }
+  }
+}
+
+@mixin get-colors() {
+  @for $i from 1 through 8 {
+    @if $i == 1 {
+      @include setColor($mercury, $i);
+    }
+    @if $i == 2 {
+      @include setColor($venus, $i);
+    }
+    @if $i == 3 {
+      @include setColor($earth, $i);
+    }
+    @if $i == 4 {
+      @include setColor($mars, $i);
+    }
+    @if $i == 5 {
+      @include setColor($jupiter, $i);
+    }
+    @if $i == 6 {
+      @include setColor($saturn, $i);
+    }
+    @if $i == 7 {
+      @include setColor($uranus, $i);
+    }
+    @if $i == 8 {
+      @include setColor($neptune, $i);
+    }
+  }
+}

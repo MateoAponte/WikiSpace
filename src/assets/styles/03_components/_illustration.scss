@@ -1,0 +1,21 @@
+.illustration {
+  grid-area: image;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__planet {
+    width: 58vh;
+  }
+
+  &__geo {
+    width: 28vh;
+    position: absolute;
+    bottom: -53px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    z-index: 10;
+  }
+}

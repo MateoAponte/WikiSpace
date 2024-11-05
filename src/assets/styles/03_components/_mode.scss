@@ -1,0 +1,43 @@
+.mode {
+  grid-area: mode;
+  width: 100%;
+  align-self: end;
+
+  &__section {
+    width: 100%;
+
+    &-content {
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-start;
+      border-radius: 2px;
+      padding: 1rem 2rem;
+      border: 1px solid $grey;
+      margin-bottom: 1rem;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover,
+      &--active {
+        background-color: $earth;
+        border: 1px solid $earth;
+        scale: 1.05;
+      }
+    }
+    &-index {
+      font-size: 1rem;
+      color: $grey;
+      font-weight: 600;
+      margin-right: 2rem;
+      letter-spacing: 4px;
+    }
+    &-title {
+      font-size: 1rem;
+      color: $white;
+      font-weight: 600;
+      font-family: $font-title;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+}
