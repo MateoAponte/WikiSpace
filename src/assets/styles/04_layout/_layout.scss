@@ -1,31 +1,53 @@
 html {
-  font-family: 16px;
+  font-size: 16px;
 }
 
 body {
   background-color: $background-color;
   min-height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 .body {
   width: 100%;
   display: grid;
   grid-template-columns: 3fr 1.5fr;
-  grid-template-rows: 29vh 29vh 1fr;
+  grid-template-rows: 17rem 17rem 1fr;
   grid-template-areas:
     'image content'
     'image mode'
     'info info';
-  padding: 4em 12em 0;
+  padding: 4rem 12rem 0;
 }
 
-.planet-wiki {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 110px 3fr;
-  grid-template-areas:
-    'header'
-    'body';
+@media screen and (max-width: 1450px) {
+  .body {
+    grid-template-columns: 2fr 1.5fr;
+  }
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .body {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 17rem 17rem 1fr 1fr;
+    grid-template-areas:
+      'image'
+      'content'
+      'mode'
+      'info';
+    padding: 4rem 12rem 0;
+  }
 }

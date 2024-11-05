@@ -4,18 +4,32 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-bottom: 1.5rem;
 
   &__planet {
-    width: 58vh;
+    width: 30rem;
   }
 
   &__geo {
-    width: 28vh;
+    width: 15rem;
     position: absolute;
     bottom: -53px;
     right: 0px;
     left: 0px;
     margin: auto;
     z-index: 10;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .illustration {
+    margin-bottom: 4rem;
+    &__planet {
+      width: 17rem;
+    }
+
+    &__geo {
+      width: 8rem;
+    }
   }
 }

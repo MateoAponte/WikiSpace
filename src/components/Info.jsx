@@ -1,7 +1,14 @@
 import numeral from 'numeral';
 import React, { useEffect, useState } from 'react';
 
-export const Info = ({ rotation, revolution, radius, temperature }) => {
+export const Info = ({
+  rotation = 0,
+  revolution = 0,
+  radius = 0,
+  temperature = 0,
+}) => {
+  console.log(temperature);
+
   const [animatedRotation, setAnimatedRotation] = useState(0);
   const [animatedRevolution, setAnimatedRevolution] = useState(0);
   const [animatedRadius, setAnimatedRadius] = useState(0);
@@ -34,19 +41,19 @@ export const Info = ({ rotation, revolution, radius, temperature }) => {
     animateValue(revolution, setAnimatedRevolution, animatedRevolution);
     animateValue(radius, setAnimatedRadius, animatedRadius);
     animateValue(temperature, setAnimatedTemperature, animatedTemperature);
-  }, [rotation, revolution, radius, temperature]);
+  }, [temperature]);
 
   const getFormat = (value) => {
     return numeral(value).format('0,0.000');
   };
   const getDays = (time) => {
-    return `${getFormat(time)} Days`; // Usar toFixed para limitar a 2 decimales
+    return `${getFormat(time)} Days`;
   };
   const getKm = (large) => {
-    return `${getFormat(large)} KM`; // Usar toFixed para limitar a 2 decimales
+    return `${getFormat(large)} KM`;
   };
   const getTemp = (temp) => {
-    return `${getFormat(temp)} °C`; // Cambié KM a °C para la temperatura
+    return `${getFormat(temp)} °C`;
   };
 
   return (

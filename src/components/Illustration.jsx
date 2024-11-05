@@ -21,23 +21,20 @@ export const Illustration = ({ source, sourceGeo }) => {
   };
 
   useEffect(() => {
-    // Inicia la animación de salida
     setIsExiting(true);
 
-    // Espera un tiempo antes de ocultar el componente
     const timeout = setTimeout(() => {
-      setIsVisible(false); // Oculta el componente después de la animación de salida
-      setIsExiting(false); // Resetea el estado de salida
-      setRealSource(source); // Actualiza el estado del source real
-      setRealSourceGeo(sourceGeo); // Actualiza el estado del source real
-    }, 300); // Este tiempo debe coincidir con la duración de la animación de salida
+      setIsVisible(false);
+      setIsExiting(false);
+      setRealSource(source);
+      setRealSourceGeo(sourceGeo);
+    }, 300);
 
     return () => clearTimeout(timeout); // Limpiar el timeout si el componente se desmonta
   }, [source, sourceGeo]); // Escuchar cambios en la prop source
 
   return (
     <motion.picture
-      initial={{ x: 100, y: 100, opacity: 0, scale: 0.5 }}
       animate={{
         x: 0,
         y: 0,
