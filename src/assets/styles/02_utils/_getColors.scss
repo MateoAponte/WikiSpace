@@ -1,44 +1,48 @@
-@mixin setColor($color, $index) {
+@mixin setColor($color, $index, $occult-border) {
   &:nth-child(#{$index}) {
-    color: $color;
+    @if ($occult-border == false) {
+      color: $color;
+    }
 
     &::before {
       background-color: $color;
       transform: scale(1);
       border-radius: 50%;
     }
-    &::after {
-      background-color: $color;
-      width: 100%;
+    @if ($occult-border) {
+      &::after {
+        background-color: $color;
+        width: 100%;
+      }
     }
   }
 }
 
-@mixin get-colors() {
+@mixin get-colors($occult-border) {
   @for $i from 1 through 8 {
     @if $i == 1 {
-      @include setColor($mercury, $i);
+      @include setColor($mercury, $i, $occult-border);
     }
     @if $i == 2 {
-      @include setColor($venus, $i);
+      @include setColor($venus, $i, $occult-border);
     }
     @if $i == 3 {
-      @include setColor($earth, $i);
+      @include setColor($earth, $i, $occult-border);
     }
     @if $i == 4 {
-      @include setColor($mars, $i);
+      @include setColor($mars, $i, $occult-border);
     }
     @if $i == 5 {
-      @include setColor($jupiter, $i);
+      @include setColor($jupiter, $i, $occult-border);
     }
     @if $i == 6 {
-      @include setColor($saturn, $i);
+      @include setColor($saturn, $i, $occult-border);
     }
     @if $i == 7 {
-      @include setColor($uranus, $i);
+      @include setColor($uranus, $i, $occult-border);
     }
     @if $i == 8 {
-      @include setColor($neptune, $i);
+      @include setColor($neptune, $i, $occult-border);
     }
   }
 }

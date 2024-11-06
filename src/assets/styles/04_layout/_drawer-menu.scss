@@ -1,0 +1,101 @@
+.drawer-menu {
+  position: absolute;
+  left: -100vw;
+  width: 100vw;
+  top: 0;
+  transition: all 0.35s ease-in-out;
+  height: 100vh;
+  z-index: 10;
+  background-color: lighten($background-color, 0.2);
+
+  &--active {
+    left: 0;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $darkGrey;
+    margin-bottom: 1rem;
+
+    &-title {
+      font-size: 2.5rem;
+      color: $white;
+      font-family: $font-title;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+    }
+    &-close {
+      font-size: 1.5rem;
+      color: $white;
+      font-family: $font-title;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-family: $font-body;
+      letter-spacing: 0.4px;
+      margin-bottom: 1rem;
+      padding: 1rem 1rem 2rem;
+      border-radius: 2px;
+      transition: all 0.2s ease-in-out;
+      position: relative;
+      padding-left: 3rem;
+      width: 100%;
+      border-bottom: 1px solid $darkGrey;
+      @include get-colors(true);
+      color: $white;
+
+      &:hover,
+      &.active {
+        transform: scale(1.05);
+        padding-left: 5rem;
+        @include get-colors(false);
+
+        &::before {
+          left: 3.5rem;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 1.5rem;
+        top: 0px;
+        bottom: 12px;
+        margin: auto;
+
+        width: 10px;
+        height: 10px;
+        transform: scale(0);
+        border-radius: 50%;
+        transition: inherit;
+      }
+    }
+  }
+}
+@media screen and (min-width: 750px) {
+  .header__icon {
+    display: none;
+  }
+  .drawer-menu {
+    display: none;
+  }
+}

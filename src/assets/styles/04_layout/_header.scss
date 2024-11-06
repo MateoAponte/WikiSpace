@@ -16,6 +16,7 @@
     font-weight: 400;
     letter-spacing: 0.4px;
   }
+
   &__links {
     display: flex;
     flex-direction: row;
@@ -42,7 +43,7 @@
 
       &:hover,
       &.active {
-        @include get-colors();
+        @include get-colors(false);
         transform: scale(1.05);
       }
 
@@ -71,10 +72,24 @@
       }
     }
   }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: $white;
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 1400px) {
   .header {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 750px) {
+  .header {
+    flex-direction: row;
+  }
+  .header__links {
+    display: none;
   }
 }

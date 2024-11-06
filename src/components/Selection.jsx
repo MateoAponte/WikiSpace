@@ -1,8 +1,8 @@
 import { PlanetsMode } from '@/data/Mode.js';
-import { Illustration } from '../Illustration';
-import { Description } from '../Description';
-import { PlanetMode } from '../PlanetMode';
-import { Info } from '../Info';
+import { Illustration } from './PlanetComponents/Illustration';
+import { Description } from './PlanetComponents/Description';
+import { PlanetMode } from './PlanetComponents/PlanetMode';
+import { Info } from './PlanetComponents/Info';
 import { useStore } from '@/store/store';
 
 export const Selection = () => {

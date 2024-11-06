@@ -1,40 +1,51 @@
 import { useStore } from '@/store/store';
 import { motion } from 'framer-motion';
-
-export const Header = ({ active }) => {
+import { useEffect, useState } from 'react';
+export const DrawerMenu = ({ show }) => {
+  const [drawerClass, setDrawerClass] = useState('drawer-menu');
   const { planets, setSelectionIndex, selectionIndex } = useStore();
 
   const handleClick = (index) => {
     setSelectionIndex(index);
+    handleMenuClick();
   };
-
   const getSelectedIndex = (index) => {
     return selectionIndex === index ? 'active' : '';
   };
 
+  useEffect(() => {
+    setDrawerClass('drawer-menu drawer-menu--active');
+  }, []);
+  const handleMenuClick = () => {
+    setDrawerClass('drawer-menu');
+    setTimeout(() => {
+      show(false);
+    }, 200);
+  };
+
   // Definir los variantes para la animación
   const variants = {
-    hidden: { y: -100, opacity: 0, scale: 0.5 },
+    hidden: { x: -150, opacity: 0 },
     visible: (index) => ({
-      y: 0,
+      x: 0,
       opacity: 1,
-      scale: 1,
       transition: {
+        mass: 1, // Masa del objeto animado
         delay: index * 0.1, // Retraso basado en el índice
         duration: 0.05,
       },
     }),
   };
-  const handleMenuClick = () => {
-    console.log('click');
-
-    active(true);
-  };
 
   return (
-    <div className="header">
-      <div className="header__brand">THE PLANETS</div>
-      <div className="header__links">
+    <div className={drawerClass}>
+      <div className="drawer-menu__header">
+        <h3 className="drawer-menu__header-title">THE PLANETS</h3>
+        <div className="drawer-menu__header-close" onClick={handleMenuClick}>
+          <img src="/assets/close.svg" alt="Close icon" />
+        </div>
+      </div>
+      <div className="drawer-menu__links">
         {planets.map((planet, index) => (
           <motion.a
             key={index}
@@ -49,9 +60,6 @@ export const Header = ({ active }) => {
             {planet.name}
           </motion.a>
         ))}
-      </div>
-      <div className="header__icon" onClick={handleMenuClick}>
-        <img src="/assets/menu-icon-svg.svg" alt="Menu icon" />
       </div>
     </div>
   );

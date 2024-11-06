@@ -51,3 +51,16 @@ body {
     padding: 4rem 12rem 0;
   }
 }
+@media screen and (max-width: 750px) {
+  .body {
+    width: 100vw;
+    padding: 4rem 0;
+    grid-template-rows: 10rem 17rem 17rem 1fr;
+    grid-template-columns: 4% 88% 4%;
+    grid-template-areas:
+      '. mode .'
+      '. image .'
+      '. content .'
+      '. info .';
+  }
+}

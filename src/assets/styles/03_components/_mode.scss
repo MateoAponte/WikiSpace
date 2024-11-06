@@ -41,3 +41,21 @@
     }
   }
 }
+
+@media screen and (max-width: 750px) {
+  .mode {
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+  .mode__section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    &-content {
+      flex-grow: 1;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+    }
+  }
+}

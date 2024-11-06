@@ -33,3 +33,15 @@
     }
   }
 }
+@media screen and (max-width: 750px) {
+  .illustration {
+    margin-bottom: 4rem;
+    &__planet {
+      width: 13rem;
+    }
+
+    &__geo {
+      width: 8rem;
+    }
+  }
+}
