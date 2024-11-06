@@ -43,7 +43,7 @@
 
       &:hover,
       &.active {
-        @include get-colors(false);
+        @include get-colors(true);
         transform: scale(1.05);
       }
 

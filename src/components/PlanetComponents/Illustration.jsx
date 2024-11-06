@@ -28,7 +28,7 @@ export const Illustration = ({ source, sourceGeo }) => {
       setIsExiting(false);
       setRealSource(source);
       setRealSourceGeo(sourceGeo);
-    }, 300);
+    }, 500);
 
     return () => clearTimeout(timeout); // Limpiar el timeout si el componente se desmonta
   }, [source, sourceGeo]); // Escuchar cambios en la prop source
@@ -36,12 +36,18 @@ export const Illustration = ({ source, sourceGeo }) => {
   return (
     <motion.picture
       animate={{
-        x: 0,
-        y: 0,
+        x: isExiting ? 600 : 0,
+        y: isExiting ? -250 : 0,
         opacity: isExiting ? 0 : 1,
-        scale: isExiting ? 0.5 : 1,
+        scale: isExiting ? 0.05 : 1,
       }}
-      exit={{ x: -200, y: -200, opacity: 0, scale: 0.5 }}
+      transition={{
+        x: { duration: 0.4 },
+        y: { duration: 0.5 },
+        opacity: { duration: 0.5 },
+        scale: { duration: 0.15 },
+        duration: 1.2,
+      }}
       className="illustration"
       onAnimationComplete={() => {
         // Si la animación de salida se completa, ocultamos el componente
