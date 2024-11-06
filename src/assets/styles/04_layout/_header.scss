@@ -75,8 +75,15 @@
 
   &__icon {
     font-size: 1.5rem;
-    color: $white;
     cursor: pointer;
+    color: $white;
+    margin-top: 10px;
+
+    img {
+      width: 2rem;
+      margin-right: 1rem;
+      filter: invert(1) brightness(30);
+    }
   }
 }
 

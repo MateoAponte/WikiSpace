@@ -35,6 +35,11 @@
       font-weight: 400;
       letter-spacing: 0.4px;
       cursor: pointer;
+      img {
+        width: 3.5rem;
+        margin-right: 1rem;
+        filter: invert(1) brightness(30);
+      }
     }
   }
 

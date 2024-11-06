@@ -1,5 +1,6 @@
 import { useStore } from '@/store/store';
 import { motion } from 'framer-motion';
+import IconMenu from '@/assets/image/menu-icon.svg';
 
 export const Header = ({ active }) => {
   const { planets, setSelectionIndex, selectionIndex } = useStore();
@@ -51,7 +52,7 @@ export const Header = ({ active }) => {
         ))}
       </div>
       <div className="header__icon" onClick={handleMenuClick}>
-        <img src="/assets/menu-icon-svg.svg" alt="Menu icon" />
+        <img src={IconMenu} alt="Menu icon" />
       </div>
     </div>
   );

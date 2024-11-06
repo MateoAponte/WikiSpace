@@ -1,6 +1,8 @@
 import { useStore } from '@/store/store';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import IconClose from '@/assets/image/close.svg';
+
 export const DrawerMenu = ({ show }) => {
   const [drawerClass, setDrawerClass] = useState('drawer-menu');
   const { planets, setSelectionIndex, selectionIndex } = useStore();
@@ -42,7 +44,7 @@ export const DrawerMenu = ({ show }) => {
       <div className="drawer-menu__header">
         <h3 className="drawer-menu__header-title">THE PLANETS</h3>
         <div className="drawer-menu__header-close" onClick={handleMenuClick}>
-          <img src="/assets/close.svg" alt="Close icon" />
+          <img src={IconClose} alt="Close icon" />
         </div>
       </div>
       <div className="drawer-menu__links">
